@@ -1,0 +1,52 @@
+{
+  "manifest_version": 3,
+  "name": "Remitente Real",
+  "version": "0.2.0",
+  "description": "Compara SPF, DKIM y DMARC del correo abierto con lo que publica el dominio y avisa de suplantaciones.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://cloudflare-dns.com/*",
+    "https://dns.google/*",
+    "https://rdap.org/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Empresas y dominios de confianza",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["ik.js"],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": [
+        "lib/domains.js",
+        "lib/parse.js",
+        "lib/evaluate.js",
+        "lib/panel.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

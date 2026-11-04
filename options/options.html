@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Empresas de confianza</title>
+    <style>
+      :root { color-scheme: light dark; --ink: #1f2328; --muted: #5b626b; --line: #cfd4da; --bg: #f5f6f8; --surface: #fff; --accent: #1a5fb4; }
+      @media (prefers-color-scheme: dark) {
+        :root { --ink: #e7e9ec; --muted: #a4abb3; --line: #3d434a; --bg: #16181b; --surface: #1f2226; --accent: #8ab4f8; }
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; padding: 32px 16px; background: var(--bg); color: var(--ink); font: 14px/1.5 "Google Sans", Roboto, Arial, sans-serif; }
+      main { max-width: 680px; margin: 0 auto; }
+      h1 { margin: 0 0 8px; font-size: 22px; font-weight: 600; }
+      p { margin: 0 0 16px; color: var(--muted); }
+      label { display: block; margin-bottom: 6px; font-weight: 500; }
+      textarea {
+        width: 100%; min-height: 420px; padding: 12px; resize: vertical;
+        background: var(--surface); color: var(--ink);
+        border: 1px solid var(--line); border-radius: 8px;
+        font: 13px/1.6 ui-monospace, Menlo, Consolas, monospace;
+      }
+      .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; }
+      button { font: inherit; font-weight: 500; padding: 7px 14px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+      button.primary { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+      #status { color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Empresas de confianza</h1>
+      <p>Un correo solo aparece como verificado si su dominio está aquí. El primer dominio de cada línea se usa para detectar imitaciones.</p>
+      <label for="brands">Una empresa por línea: <code>Nombre: dominio.com, otro-dominio.es</code></label>
+      <textarea id="brands" spellcheck="false"></textarea>
+      <div class="actions">
+        <button id="save" class="primary" type="button">Guardar</button>
+        <button id="reset" type="button">Restaurar lista inicial</button>
+        <span id="status" role="status"></span>
+      </div>
+    </main>
+    <script src="../lib/domains.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
