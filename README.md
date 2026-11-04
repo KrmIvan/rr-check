@@ -1,12 +1,12 @@
-# Remitente Real
+# RR Check
 
-Extensión de Chrome para saber si un correo de Gmail viene de quien dice. Al abrir un correo, muestra un aviso encima con el resultado.
+**Real Remitent Check.** Extensión de Chrome para saber si un correo de Gmail viene de quien dice. Al abrir un correo, muestra un aviso encima con el resultado.
 
 ![Los tres tipos de aviso principales](docs/veredictos.png)
 
 ## Instalación
 
-1. [Descarga el ZIP](https://github.com/KrmIvan/remitente-real/archive/refs/heads/main.zip) y descomprímelo.
+1. [Descarga el ZIP](https://github.com/KrmIvan/rr-check/archive/refs/heads/main.zip) y descomprímelo.
 2. Abre `chrome://extensions` en Chrome y activa **Modo de desarrollador**.
 3. Pulsa **Cargar descomprimida** y elige la carpeta que has descomprimido.
 4. Recarga Gmail.

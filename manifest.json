@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Remitente Real",
+  "name": "RR Check",
   "version": "0.2.0",
   "description": "Compara SPF, DKIM y DMARC del correo abierto con lo que publica el dominio y avisa de suplantaciones.",
   "permissions": ["storage"],
